@@ -9,11 +9,8 @@ def open_target_benefits_page(context):
 
 @when ('user navigates to the first benefit')
 def navigate_to_first_benefit(context):
-         benefit_list = context.find_elements(By.CSS_SELECTOR, "li[class*= 'BenefitCard']" )
-         context.driver.find_element(By.CSS_SELECTOR, "benefit_list[0]")
-
+    benefit_list = context.driver.find_elements(By.CSS_SELECTOR, "li[class*= 'BenefitCard']" )
 @then('User will find that there are five programs available')
 def verify_five_programs(context):
-    print('3')
-    benefit_list = context.find_elements('CSS_SELECTOR', "li[class*= 'BenefitCard']")
+    benefit_list = context.driver.find_elements(By.CSS_SELECTOR, "li[class*= 'BenefitCard']" )
     assert len(benefit_list) == 5, 'There should be 5 benefits, but we found {}'.format(len(benefit_list))
